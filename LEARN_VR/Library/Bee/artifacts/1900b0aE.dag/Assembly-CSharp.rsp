@@ -452,6 +452,7 @@
 "Assets/Scripts/Score.cs"
 "Assets/Scripts/Spawner.cs"
 "Assets/Scripts/Timer.cs"
+"Assets/Teleport.cs"
 -langversion:9.0
 /deterministic
 /optimize+

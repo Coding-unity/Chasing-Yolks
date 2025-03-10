@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public Spawner spawner;
+    public Timer timer;
     public byte health = 5;
     public byte Points;
     public TextMeshProUGUI ScoreHolder;
@@ -23,5 +23,11 @@ public class Health : MonoBehaviour
         Points += 1;
         ScoreHolder.text = Points.ToString();
     }
+    private void Update()
+    {
+        if(timer.Duration != 0) return;
 
+        Points = 0;
+        timer.Duration = 90f;
+    }
 }

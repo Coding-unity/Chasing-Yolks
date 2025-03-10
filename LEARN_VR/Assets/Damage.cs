@@ -52,7 +52,6 @@ public class Damage : MonoBehaviour
             Heart[i].gameObject.SetActive(false);
             i++;
             health--;
-            Debug.Log(i);
         }
     }
 
