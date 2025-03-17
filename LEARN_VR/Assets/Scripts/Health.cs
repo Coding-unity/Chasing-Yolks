@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public Timer timer;
-    public byte health = 5;
     public byte Points;
     public TextMeshProUGUI ScoreHolder;
     public AudioSource audioSource;
+    public byte health = 5;
 
     private void Start()
     {

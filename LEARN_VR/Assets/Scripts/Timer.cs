@@ -1,11 +1,14 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI LevelTimer;
     public float Duration;
+    public Health health;
+    public Damage damage;
 
     public bool wait;
 
@@ -40,5 +43,15 @@ public class Timer : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         wait = true;
+    }
+
+    public void ResetTime(int time)
+    {
+        Duration = time;
+        Duration -= Time.deltaTime;
+        LevelTimer.color = Color.white;
+        LevelTimer.text = time.ToString();
+        health.Points = 0;
+        damage.Heart = new Image[5];
     }
 }
