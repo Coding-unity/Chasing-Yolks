@@ -14,7 +14,8 @@ public class Damage : MonoBehaviour
 
     public TextMeshProUGUI ScoreText;
     public AudioSource audioSource;
-    public Button RetryButton,PokeRetryButton;
+    public Button RetryButton;
+    public GameObject PokeRetryButton;
 
     int i;
 
@@ -23,6 +24,7 @@ public class Damage : MonoBehaviour
     private void Awake()
     {
         RetryButton.gameObject.SetActive(false);
+        PokeRetryButton.SetActive(false);
     }
 
     private void Start()
@@ -45,7 +47,7 @@ public class Damage : MonoBehaviour
             {
                 RetryButton.gameObject.SetActive(true);
             }
-
+            PokeRetryButton.SetActive(true);
         }
     }
 
@@ -73,4 +75,11 @@ public class Damage : MonoBehaviour
         RetryButton.gameObject.SetActive(false);
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+        UnityEngine.AndroidJavaObject activity = new UnityEngine.AndroidJavaObject("com.unity3d.player.UnityPlayer");
+        activity.Call("finish");
+        Debug.Log("exited");
+    }
 }
